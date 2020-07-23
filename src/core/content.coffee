@@ -268,7 +268,8 @@ ContentTree.flatten = (tree) ->
     if value instanceof ContentTree
       rv = rv.concat ContentTree.flatten value
     else if "#{value.url}".startsWith(('/tag/%s')
-      // Ignore
+      # Ignore
+      console.log("ContentTree.flatten: Ignore #{value.url}")
     else
       rv.push value
   return rv
